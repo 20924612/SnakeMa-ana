@@ -95,6 +95,7 @@ public class Board extends JPanel {
                 scoreDelegate.increment(true);
                 food = new Food(snake);
                 snake.setRemainingGrow(5);
+                specialFoodTimer.stop();
                 createFood();
             } else {
                 scoreDelegate.increment(false);
@@ -103,9 +104,9 @@ public class Board extends JPanel {
                 createFood();
             }
 
-            repaint();
-            Toolkit.getDefaultToolkit().sync();
         }
+        repaint();
+        Toolkit.getDefaultToolkit().sync();
 
     }
 
