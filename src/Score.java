@@ -25,6 +25,7 @@ public class Score extends javax.swing.JPanel implements ScoreDelegate {
         } else {
             increment(1);
         }
+        updateLabel();
     }
     
     void increment(int inc) {

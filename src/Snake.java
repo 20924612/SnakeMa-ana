@@ -70,24 +70,20 @@ public class Snake {
         int row = body.get(0).getRow();
         int col = body.get(0).getCol();
         switch(direction) {
-            case UP: if (direction != Direction.DOWN)
-                        return tryToMove(row - 1, col);
-                break;
-            case DOWN: if (direction != Direction.UP)                    
-                        return tryToMove(row + 1, col);
-                break;
-            case LEFT: if (direction != Direction.RIGHT)                
-                            return tryToMove(row, col - 1);
-                break;
-            case RIGHT: if (direction != Direction.LEFT)
-                           return tryToMove(row, col + 1);
-                break;
+            case UP: return tryToMove(row - 1, col);
+
+            case DOWN: return tryToMove(row + 1, col);
+
+            case LEFT: return tryToMove(row, col - 1);
+ 
+            case RIGHT: return tryToMove(row, col + 1);
+
         }
         return true;
     }
     
     public boolean tryToMove(int row, int col) {
-        if (row <= 0 || col <= 0 || 
+        if (row < 0 || col < 0 || 
                 row >= Config.numRows || col >= Config.numCols) {            
             return false;
         } else { 
